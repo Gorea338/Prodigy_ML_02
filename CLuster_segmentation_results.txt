@@ -139,3 +139,61 @@ Cluster 4:
   Average Income: $54.4k
   Average Spending Score: 48.9/100
   Profile: Low Income, High Spending
+Total explained variance by first 2 components: 77.57%
+
+Model Evaluation:
+==================================================
+Silhouette Score: 0.417
+Within-cluster sum of squares (Inertia): 168.25
+
+Business Insights and Recommendations:
+==================================================
+
+Cluster 0 Strategy:
+  Standard customers with moderate income and spending. Focus on retention strategies.
+
+Cluster 1 Strategy:
+  High-income but low-spending customers. Target with premium products and exclusive offers.
+
+Cluster 2 Strategy:
+  High-value customers with high income and spending. VIP treatment and loyalty programs.
+
+Cluster 3 Strategy:
+  Budget-conscious customers. Offer discounts, promotions, and value products.
+
+Cluster 4 Strategy:
+  Young spenders with lower income but high spending tendency. Credit options and trendy products.
+
+Example Customer Predictions:
+==================================================
+Customer 1: Age 25, Income $40k, Spending 80
+  Predicted Cluster: 1
+  Strategy: High-income but low-spending customers. Target with premium products and exclusive offers.
+
+Customer 2: Age 45, Income $80k, Spending 30
+  Predicted Cluster: 3
+  Strategy: Budget-conscious customers. Offer discounts, promotions, and value products.
+
+Customer 3: Age 35, Income $60k, Spending 70
+  Predicted Cluster: 1
+  Strategy: High-income but low-spending customers. Target with premium products and exclusive offers.
+
+Customer 4: Age 50, Income $30k, Spending 20
+  Predicted Cluster: 0
+  Strategy: Standard customers with moderate income and spending. Focus on retention strategies.
+
+
+Saving Results...
+==================================================
+Clustered dataset saved as 'customer_segments.csv'
+Cluster centers saved as 'cluster_centers.csv'
+
+Customer Segmentation Analysis Complete!
+==================================================
+
+SUMMARY:
+• Created 5 customer segments using K-Means clustering
+• Analyzed 200 customers based on age, income, and spending behavior
+• Achieved silhouette score of 0.417 (higher is better)
+• Identified distinct customer profiles for targeted marketing strategies
+• Generated actionable business insights for each customer segment
