@@ -1,0 +1,141 @@
+Dataset Overview:
+==================================================
+Shape: (200, 5)
+Columns: ['CustomerID', 'Gender', 'Age', 'Annual Income (k$)', 'Spending Score (1-100)']
+
+First few rows:
+   CustomerID  Gender  Age  Annual Income (k$)  Spending Score (1-100)
+0           1    Male   19                  15                      39
+1           2    Male   21                  15                      81
+2           3  Female   20                  16                       6
+3           4  Female   23                  16                      77
+4           5  Female   31                  17                      40
+
+Dataset Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 200 entries, 0 to 199
+Data columns (total 5 columns):
+ #   Column                  Non-Null Count  Dtype 
+---  ------                  --------------  ----- 
+ 0   CustomerID              200 non-null    int64 
+ 1   Gender                  200 non-null    object
+ 2   Age                     200 non-null    int64 
+ 3   Annual Income (k$)      200 non-null    int64 
+ 4   Spending Score (1-100)  200 non-null    int64 
+dtypes: int64(4), object(1)
+memory usage: 7.9+ KB
+None
+
+Missing Values:
+CustomerID                0
+Gender                    0
+Age                       0
+Annual Income (k$)        0
+Spending Score (1-100)    0
+dtype: int64
+
+Dataset Statistics:
+       CustomerID         Age  Annual Income (k$)  Spending Score (1-100)
+count  200.000000  200.000000          200.000000              200.000000
+mean   100.500000   38.850000           60.560000               50.200000
+std     57.879185   13.969007           26.264721               25.823522
+min      1.000000   18.000000           15.000000                1.000000
+25%     50.750000   28.750000           41.500000               34.750000
+50%    100.500000   36.000000           61.500000               50.000000
+75%    150.250000   49.000000           78.000000               73.000000
+max    200.000000   70.000000          137.000000               99.000000
+
+Unique values in categorical columns:
+Gender: ['Male' 'Female']
+
+Preparing Data for Clustering...
+==================================================
+Features for clustering: ['Age', 'Annual_Income', 'Spending_Score']
+Feature matrix shape: (200, 3)
+Original data shape: (200, 3)
+Scaled data shape: (200, 3)
+Scaler expects 3 features
+
+Finding Optimal Number of Clusters...
+==================================================
+Optimal K by Elbow method: 3
+Optimal K by Silhouette score: 6
+Using K = 5 for final clustering
+
+Applying K-Means Clustering with K=5...
+==================================================
+Cluster centers shape: (5, 3)
+Scaler expects 3 features
+Cluster Centers (Original Scale):
+         Age  Annual_Income  Spending_Score  Cluster
+0  46.250000      26.750000       18.350000        0
+1  25.185185      41.092593       62.240741        1
+2  32.875000      86.100000       81.525000        2
+3  39.871795      86.102564       19.358974        3
+4  55.638298      54.382979       48.851064        4
+
+Cluster Analysis:
+==================================================
+Cluster Summary Statistics:
+           Age                Annual_Income                 Spending_Score  \
+          mean    std min max          mean    std min  max           mean   
+Cluster                                                                      
+0        46.25  11.58  20  67         26.75   7.31  16   39          18.35   
+1        25.19   5.51  18  38         41.09  16.82  15   67          62.24   
+2        32.88   3.86  27  40         86.10  16.34  69  137          81.53   
+3        39.87  10.94  19  59         86.10  16.73  64  137          19.36   
+4        55.64   8.91  40  70         54.38   8.82  38   79          48.85   
+
+                        
+           std min max  
+Cluster                 
+0        11.94   3  36  
+1        16.60  39  99  
+2        10.00  58  97  
+3        11.61   1  42  
+4         6.30  35  60  
+
+Customers per cluster:
+Cluster 0: 20 customers (10.0%)
+Cluster 1: 54 customers (27.0%)
+Cluster 2: 40 customers (20.0%)
+Cluster 3: 39 customers (19.5%)
+Cluster 4: 47 customers (23.5%)
+
+Cluster Characteristics:
+==================================================
+
+Cluster 0:
+  Size: 20 customers
+  Average Age: 46.2 years
+  Average Income: $26.8k
+  Average Spending Score: 18.4/100
+  Profile: Standard Customers
+
+Cluster 1:
+  Size: 54 customers
+  Average Age: 25.2 years
+  Average Income: $41.1k
+  Average Spending Score: 62.2/100
+  Profile: High Income, Low Spending
+
+Cluster 2:
+  Size: 40 customers
+  Average Age: 32.9 years
+  Average Income: $86.1k
+  Average Spending Score: 81.5/100
+  Profile: High Income, High Spending
+
+Cluster 3:
+  Size: 39 customers
+  Average Age: 39.9 years
+  Average Income: $86.1k
+  Average Spending Score: 19.4/100
+  Profile: Low Income, Low Spending
+
+Cluster 4:
+  Size: 47 customers
+  Average Age: 55.6 years
+  Average Income: $54.4k
+  Average Spending Score: 48.9/100
+  Profile: Low Income, High Spending
